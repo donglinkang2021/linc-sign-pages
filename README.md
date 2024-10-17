@@ -8,4 +8,4 @@
 
 </div>
 
-Simple github pages site to display the check in and check out times of LINC lab.
+Simple github pages site to display the check in and check out times of LINC lab. You can view the site [✨here✨](https://donglinkang2021.github.io/linc-sign-pages/).
