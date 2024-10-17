@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laboratory Check-in and Check-out Timetable</title>
+    <script type="module">
+      import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+      mermaid.initialize({ startOnLoad: true });
+    </script>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+            line-height: 1.6;
+            color: #24292e;
+            max-width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1, h2 {
+            text-align: center;
+            border-bottom: 1px solid #eaecef;
+            padding-bottom: 0.3em;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-bottom: 16px;
+        }
+        th, td {
+            border: 1px solid #dfe2e5;
+            padding: 6px 13px;
+        }
+        th {
+            background-color: #f6f8fa;
+            font-weight: 600;
+        }
+        tr:nth-child(even) {
+            background-color: #f6f8fa;
+        }
+        .mermaid {
+            margin-top: 20px;
+            height: 60%; /* 增加高度 */
+        }
+    </style>
+</head>
+<body>
+
+<h1>LINC Check-in and Check-out Timetable</h1>
+
+<table>
+    <tr>
+        <th>Time Period</th>
+        <th>Start Time</th>
+        <th>End Time</th>
+        <th>Check-in Start</th>
+        <th>Check-in End</th>
+        <th>Check-out Start</th>
+        <th>Check-out End</th>
+    </tr>
+    <tr>
+        <td>Morning</td>
+        <td>09:00</td>
+        <td>12:30</td>
+        <td>06:00</td>
+        <td>10:30</td>
+        <td>10:30</td>
+        <td>12:45</td>
+    </tr>
+    <tr>
+        <td>Afternoon</td>
+        <td>13:00</td>
+        <td>18:00</td>
+        <td>12:45</td>
+        <td>15:30</td>
+        <td>15:30</td>
+        <td>18:15</td>
+    </tr>
+    <tr>
+        <td>Evening</td>
+        <td>18:30</td>
+        <td>23:30</td>
+        <td>18:15</td>
+        <td>21:00</td>
+        <td>21:00</td>
+        <td>00:30</td>
+    </tr>
+</table>
+
+<div class="mermaid">
+gantt
+    title Work Schedule
+    dateFormat  HH:mm
+    axisFormat %H:%M:%S
+
+    section Morning
+    Work :t1, 09:00, 3.5h
+    Check-in :t2, 06:00, 4.5h
+    Check-out :t3, 10:30, 2.25h
+
+    section Afternoon
+    Work :t4, 13:00, 5h
+    Check-in :t5, 12:45, 2.75h
+    Check-out :t6, 15:30, 2.75h
+
+    section Evening
+    Work :t7, 18:30, 5h
+    Check-in :t8, 18:15, 2.75h
+    Check-out :t9, 21:00, 3.5h
+</div>
+
+</body>
+</html>
